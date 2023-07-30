@@ -6,6 +6,7 @@ import router from './router'
 import 'ss.common.css/index.css'
 import 'animate.css';
 import Parallax from 'parallax-js'
+import 'element-plus/dist/index.css'
 
 const app = createApp(App)
 

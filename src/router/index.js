@@ -15,7 +15,8 @@ const router = createRouter({
         path: '/admin',
         name: 'admin',
         component: Layout,
-        children: addParentPath(insideRoutes, '/admin')
+        children: addParentPath(insideRoutes, '/admin'),
+        redirect: '/admin/index'
     }, ...outsideRoutes]
 })
 console.log(router.getRoutes())
