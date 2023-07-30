@@ -1,14 +1,19 @@
 <script setup>
 import {useUserStore} from "@/stores/userStore";
 import UserMenu from "@/components/UserHelper/UserMenu.vue";
-import {reactive} from "vue";
+import {shallowRef} from "vue";
 import AppMenu from "@/components/AppHelper/AppMenu.vue";
+import MsgMenu from "@/components/MsgHelper/MsgMenu.vue";
 
 const userStore = useUserStore();
 console.log(userStore);
 const {userInfo} = userStore;
-const state = reactive({
+const state = shallowRef({
   headerItems: [
+    {
+      name: "MsgMenu",
+      component: MsgMenu
+    },
     {
       name: "AppMenu",
       component: AppMenu
@@ -26,7 +31,7 @@ const state = reactive({
   <div class="header">
     <div class="header-left">
       <img src="@/assets/images/logo.png" alt="logo"/>
-      <span>盘古系统</span>
+<!--      <span>盘古系统</span>-->
     </div>
     <div class="header-right">
       <div class="header-item" v-for="item in state.headerItems" :key="item.name">
@@ -51,7 +56,7 @@ const state = reactive({
     align-items: center;
 
     img {
-      width: 40px;
+      cursor: pointer;
       height: 40px;
       margin-right: 10px;
     }
