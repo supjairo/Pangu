@@ -1,5 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router";
-import Layout from "@/views/layout/Layout.vue";
+import Index from "@/template/index.vue";
 import insideRoutes from "@/router/insideRoutes";
 import outsideRoutes from "@/router/outsideRoutes";
 import {addParentPath} from "@/tools/BasicFnSupport";
@@ -14,7 +14,7 @@ const router = createRouter({
     }, {
         path: '/admin',
         name: 'admin',
-        component: Layout,
+        component: Index,
         children: addParentPath(insideRoutes, '/admin'),
         redirect: '/admin/index'
     }, ...outsideRoutes]
