@@ -1,6 +1,6 @@
 import {defineStore} from "pinia";
-import {loadingFiles} from "@/helper/ComparatorSupport";
 import {useSystemState} from "@/store/systemState";
+import {loadMenu, readConfig} from "@/helper/AutoLoadingSupport";
 
 export const useUserStore = defineStore('user', {
     state: () => ({
@@ -60,13 +60,14 @@ export const useUserStore = defineStore('user', {
                 updated_at: '2021-09-14 16:24:18',
             }]
         }, setMockMenus() {
-            let data = [{
-                id: 1, name: '邮箱', description: '网易邮箱', isShow: true, component: 'MailPanel'
-            }, {
-                id: 2, name: '文件', description: '文件管理', isShow: false, component: 'FilePanel'
-            }]
-            this.menus = data;
-            loadingFiles(useSystemState().menuPath, data)
+            const systemState = useSystemState()
+            /*配置文件读取*/
+            readConfig(systemState.theme, 'menus').then((res) => {
+                /*模板目录加载*/
+                loadMenu(systemState.theme, res).then((result) => {
+                    this.menus = result
+                })
+            })
         }
     },
 })

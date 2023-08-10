@@ -1,12 +1,11 @@
-import Header from './Header';
-import MailPanel from "@/template/default/header/menu/mailPanel.vue";
-
-/*布局组件*/
-export const layout = {
-    Header,
-}
-
-export const commonApps = []
-export const userMenu = {
-    MailPanel
+export default {
+    menus: [{
+        id: 1,
+        name: '邮箱',
+        description: '网易邮箱',
+        isShow: true,
+        component: 'mailPanel',
+    }, {
+        id: 2, name: '文件', description: '文件管理', isShow: false, component: 'filePanel',
+    }]
 }

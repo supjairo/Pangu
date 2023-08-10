@@ -7,7 +7,11 @@ export const useSystemState = defineStore('systemState', {
         menuPath: '/header/menu',
         pluginPath: '/home',
         isMobile: false,
-    }), getters: {}, actions: {
+    }), getters: {
+        getTheme() {
+            return this.theme
+        }
+    }, actions: {
         setTheme(theme) {
             this.theme = theme
         },

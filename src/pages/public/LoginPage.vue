@@ -7,7 +7,7 @@ import router from "@/router";
     <div class="login-form">
       <form @submit.prevent="router.push('/admin')">
         <div class="login-title">
-          <h1>欢迎使用盘古项目管理系统</h1>
+          <h1>Yo！</h1>
         </div>
         <div class="login-input">
           <div class="input">
