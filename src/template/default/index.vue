@@ -1,12 +1,11 @@
 <script setup>
-import Header from "@/template/default/header.vue";
+import Header from "@/template/default/header/index.vue";
 </script>
 
 <template>
-  <Header name="default"/>
+  <Header/>
   <router-view/>
 </template>
-
 <style scoped>
 
 </style>

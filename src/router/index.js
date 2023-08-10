@@ -2,7 +2,7 @@ import {createRouter, createWebHistory} from "vue-router";
 import Index from "@/template/index.vue";
 import insideRoutes from "@/router/insideRoutes";
 import outsideRoutes from "@/router/outsideRoutes";
-import {addParentPath} from "@/tools/BasicFnSupport";
+import {addParentPath} from "@/helper/BasicFnSupport";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
