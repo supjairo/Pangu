@@ -3,6 +3,7 @@
 import AutoHide from "@/components/AutoHide.vue";
 import {useAppState} from "@/store/appState";
 import {onMounted, ref, watch} from "vue";
+import GCard from "@/components/GCard.vue";
 
 const {apps} = useAppState();
 const deg = ref(0)
@@ -41,6 +42,11 @@ onMounted(() => {
             <div class="music-author">{{ apps[0].author }}</div>
           </div>
         </div>
+      </template>
+      <template #content>
+        <g-card>
+          感谢你的使用
+        </g-card>
       </template>
     </AutoHide>
   </div>
