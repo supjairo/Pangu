@@ -18,14 +18,14 @@ const {user} = useUserStore();
             {{ user.name }}
           </span>
           <span class="fontStyle">
-            Online:{{ user.isLogin }}
+            在线:{{ user.isLogin ? '是' : '否' }}
           </span>
         </AutoLayout>
       </AutoLayout>
     </template>
     <template #content>
       <g-card>
-
+        我是个人中心
       </g-card>
     </template>
   </auto-hide>

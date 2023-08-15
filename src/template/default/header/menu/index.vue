@@ -27,14 +27,5 @@ const close = () => {
   justify-content: flex-end;
   height: 100%;
   padding: 0 10px;
-
-  .item {
-    margin-left: 10px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-  }
 }
 </style>

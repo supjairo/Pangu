@@ -38,6 +38,7 @@ watch(() => isShow, (val) => {
   .trigger {
     position: relative;
     z-index: 1;
+    cursor: pointer;
   }
 
   .content {

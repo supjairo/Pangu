@@ -9,7 +9,7 @@ import Menu from "./menu/index.vue";
         <img src="../common/images/logo.png"/>
       </div>
       <div class="header-left-title">
-        <span>通用</span>
+<!--        <span>通用</span>-->
       </div>
     </div>
     <div class="header-center">

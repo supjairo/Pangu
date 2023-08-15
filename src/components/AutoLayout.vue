@@ -29,7 +29,7 @@ onMounted(() => {
     flex-direction: row;
 
     & > * {
-      margin-left: 15px;
+      margin-left: 20px;
     }
 
     & > *:first-child {
