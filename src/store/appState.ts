@@ -1,18 +1,13 @@
 import {defineStore} from "pinia";
-
-import {shallowRef} from "vue";
 /*选项API*/
 export const useAppState = defineStore('userState', {
     state: () => ({
         apps: [{
             id: 1,
-            name: '邮箱',
-            icon: '@/assets/icons/mail.svg',
-            component: 'Mail',
-            active: false,
-            disabled: false,
-            hidden: false,
-            meta: {}
+            name: 'music',
+            play: false,
+            cover: 'https://www.beacon-fire.com/zhangjie.webp',
+            author: '张杰',
         }]
     }),
     getters: {},

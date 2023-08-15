@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@icon-park/vue-next": "^1.4.2",
+    "@vueuse/core": "^10.3.0",
+    "@vueuse/sound": "^2.0.1",
     "animate.css": "^4.1.1",
     "axios": "^1.4.0",
     "less": "^4.1.3",

@@ -13,6 +13,14 @@ const insideRoutes = [
         path: '/user',
         name: 'user',
         component: () => import('@/pages/admin/User.vue')
+    }, {
+        path: '/social',
+        name: 'social',
+        component: () => import('@/pages/admin/Social.vue')
+    }, {
+        path: '/music',
+        name: 'music',
+        component: () => import('@/pages/admin/Music.vue')
     }
 ]
 export default insideRoutes

@@ -4,10 +4,13 @@
 * */
 
 export default {
-    /*头部菜单配置
+    /*头部左侧菜单配置
     * 动态控制显隐使用userStore.menus
     * */
     menus: [
+        {
+            id: 1, name: '音乐', description: '音乐', isShow: true, component: 'musicPlay',
+        },
         {
             id: 0, name: '应用', description: '应用', isShow: true, component: 'appsPanel',
         },
@@ -19,5 +22,5 @@ export default {
         {
             id: 3, name: '用户', description: '用户信息', isShow: true, component: 'userPanel',
         },
-    ]
+    ],
 }
