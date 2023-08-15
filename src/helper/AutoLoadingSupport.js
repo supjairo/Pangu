@@ -12,12 +12,17 @@ import {shallowRef} from "vue";
 * 2. 读取模板路径为 ../template/${theme}/config.js
 * */
 export const readConfig = (theme, exName) => {
-
-    /*读取对应的Config文件中对应name的参数*/
-    return config[`../template/${theme}/config.js`]().then((res) => {
-        /*读取对应的Menu文件*/
-        return res.default[exName]
-    })
+    /*判断防止空指针*/
+    if (config[`../template/${theme}/config.js`]) {
+        /*读取对应的Config文件中对应name的参数*/
+        return config[`../template/${theme}/config.js`]().then((res) => {
+            /*读取对应的Menu文件*/
+            return res.default[exName]
+        })
+    } else {
+        console.log('您已经装载了一个不存在的模板,请排查')
+        return Promise.resolve([])
+    }
 }
 /*
 * 模板Menu文件加载器
@@ -26,14 +31,16 @@ export const readConfig = (theme, exName) => {
 * @return Promise
  */
 export const loadMenu = (template, Array) => {
-
-    /*读取对应的Menu文件*/
+    /*防止空指针*/
     return Promise.all(Array.map((item) => {
-        return menuFiles[`../template/${template}/header/menu/${item.component}.vue`]().then((res) => {
-            item.component = shallowRef(res.default)
-            return item
-        })
-    })).then((res) => {
-        return res
-    })
+        if (menuFiles[`../template/${template}/header/menu/${item.component}.vue`]) {
+            return menuFiles[`../template/${template}/header/menu/${item.component}.vue`]().then((res) => {
+                item.component = shallowRef(res.default)
+                return item
+            })
+        } else {
+            console.log('您已经装载了一个不存在的组件,请排查')
+            return Promise.resolve(item)
+        }
+    }))
 }

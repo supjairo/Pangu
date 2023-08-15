@@ -69,7 +69,6 @@ export const useUserStore = defineStore('user', {
                 })
             })
             /*远程菜单配置文件读取*/
-
         },
         /*隐藏菜单*/
         hideMenu(id) {
