@@ -1,3 +1,9 @@
+<!--
+
+
+
+-->
+
 <script setup>
 import {ref, watch} from "vue";
 
@@ -11,11 +17,13 @@ watch(() => isShow, (val) => {
   <div class="auto-hide">
     <div @mouseenter="isShow = true" @mouseleave="isShow = false">
       <div class="trigger">
+        <!--触发元素-->
         <slot name="trigger"/>
       </div>
       <!--过渡动画-->
       <transition name="fade">
         <div v-if="isShow" class="content">
+          <!--触发效果-->
           <slot name="content"/>
         </div>
       </transition>
@@ -36,16 +44,16 @@ watch(() => isShow, (val) => {
     right: 0;
     position: absolute;
     z-index: 999;
-    margin-top: 10px;
   }
 }
 
+/*加载动画*/
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity 0.5s ease;
 }
 
-.fade-enter,
+.fade-enter-from,
 .fade-leave-to {
   opacity: 0;
 }

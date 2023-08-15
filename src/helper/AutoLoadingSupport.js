@@ -26,6 +26,7 @@ export const readConfig = (theme, exName) => {
 * @return Promise
  */
 export const loadMenu = (template, Array) => {
+
     /*读取对应的Menu文件*/
     return Promise.all(Array.map((item) => {
         return menuFiles[`../template/${template}/header/menu/${item.component}.vue`]().then((res) => {

@@ -61,12 +61,30 @@ export const useUserStore = defineStore('user', {
             }]
         }, setMockMenus() {
             const systemState = useSystemState()
-            /*配置文件读取*/
+            /*公共菜单配置文件读取*/
             readConfig(systemState.theme, 'menus').then((res) => {
                 /*模板目录加载*/
                 loadMenu(systemState.theme, res).then((result) => {
                     this.menus = result
                 })
+            })
+            /*远程菜单配置文件读取*/
+
+        },
+        /*隐藏菜单*/
+        hideMenu(id) {
+            this.menus.forEach((item) => {
+                if (item.id === id) {
+                    item.isShow = false
+                }
+            })
+        },
+        /*显示菜单*/
+        showMenu(id) {
+            this.menus.forEach((item) => {
+                if (item.id === id) {
+                    item.isShow = true
+                }
             })
         }
     },

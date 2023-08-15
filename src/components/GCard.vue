@@ -4,8 +4,7 @@
 
 <template>
   <div class="g-card">
-    <slot name="content">
-    </slot>
+    <slot></slot>
   </div>
 </template>
 
@@ -15,5 +14,6 @@
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, .1);
   padding: 10px;
+  margin-top: 10px;
 }
 </style>
